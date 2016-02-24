@@ -9,6 +9,7 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 /** Calculate constructor
  * 
@@ -17,6 +18,7 @@ public class Calculator {
 	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 /** getTotal retrieves total
@@ -35,6 +37,10 @@ public class Calculator {
 	
 	public void add (int value) {
 		total = total + value;
+		String str = Integer.toString(value);
+		String add = " + ";
+		add+=str;
+		history+=add;
 		
 	}
 	
@@ -45,6 +51,10 @@ public class Calculator {
 	
 	public void subtract (int value) {
 		total = total - value;
+		String str = Integer.toString(value);
+		String add = " - ";
+		add+=str;
+		history+=add;
 		
 	}
 /** multiply performs the multplicaton operation for Calculator
@@ -53,6 +63,10 @@ public class Calculator {
  */
 	public void multiply (int value) {
 		total = total * value;
+		String str = Integer.toString(value);
+		String add = " * ";
+		add+=str;
+		history+=add;
 		
 	}
 	
@@ -65,7 +79,10 @@ public class Calculator {
 			total = 0;
 		else
 			total = total/value;
-		
+		String str = Integer.toString(value);
+		String add = " / ";
+		add+=str;
+		history+=add;
 	}
 
 /** getHistory will store all operation performed by Calculator
@@ -74,6 +91,6 @@ public class Calculator {
  * 
  * */	
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
